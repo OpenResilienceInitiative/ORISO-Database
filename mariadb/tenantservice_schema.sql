@@ -1,4 +1,9 @@
 /*M!999999\- enable the sandbox mode */ 
+-- MariaDB dump 10.19  Distrib 10.11.14-MariaDB, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: tenantservice
+-- ------------------------------------------------------
+-- Server version	10.11.14-MariaDB-ubu2204
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -10,12 +15,20 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE SEQUENCE `sequence_topic` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 nocache nocycle ENGINE=InnoDB;
-DO SETVAL(`sequence_topic`, 0, 0);
-CREATE SEQUENCE `sequence_topic_group` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 nocache nocycle ENGINE=InnoDB;
-DO SETVAL(`sequence_topic_group`, 0, 0);
-CREATE SEQUENCE `sequence_topic_group_x_topic` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 10 nocycle ENGINE=InnoDB;
-DO SETVAL(`sequence_topic_group_x_topic`, 0, 0);
+
+--
+-- Sequence structure for `sequence_tenant`
+--
+
+DROP SEQUENCE IF EXISTS `sequence_tenant`;
+CREATE SEQUENCE `sequence_tenant` start with 1 minvalue 0 maxvalue 9223372036854775806 increment by 1 nocache nocycle ENGINE=InnoDB;
+DO SETVAL(`sequence_tenant`, 1, 0);
+
+--
+-- Table structure for table `DATABASECHANGELOG`
+--
+
+DROP TABLE IF EXISTS `DATABASECHANGELOG`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `DATABASECHANGELOG` (
@@ -35,6 +48,12 @@ CREATE TABLE `DATABASECHANGELOG` (
   `DEPLOYMENT_ID` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATABASECHANGELOGLOCK`
+--
+
+DROP TABLE IF EXISTS `DATABASECHANGELOGLOCK`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `DATABASECHANGELOGLOCK` (
@@ -45,53 +64,40 @@ CREATE TABLE `DATABASECHANGELOGLOCK` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tenant`
+--
+
+DROP TABLE IF EXISTS `tenant`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
-CREATE TABLE `topic` (
+CREATE TABLE `tenant` (
   `id` bigint(21) NOT NULL,
-  `tenant_id` bigint(21) DEFAULT NULL,
-  `name` varchar(4092) DEFAULT NULL,
-  `description` varchar(4092) DEFAULT NULL,
-  `status` varchar(20) DEFAULT NULL,
+  `name` varchar(40) NOT NULL,
+  `subdomain` varchar(255) NOT NULL,
+  `licensing_allowed_users` int(11) DEFAULT NULL,
+  `theming_logo` longtext DEFAULT NULL,
+  `theming_favicon` longtext DEFAULT NULL,
+  `theming_primary_color` varchar(15) DEFAULT NULL,
+  `theming_secondary_color` varchar(15) DEFAULT NULL,
+  `content_impressum` longtext DEFAULT NULL,
+  `content_claim` varchar(1024) DEFAULT NULL,
+  `settings` varchar(4000) DEFAULT NULL,
+  `content_privacy` longtext DEFAULT NULL,
+  `content_termsandconditions` longtext DEFAULT NULL,
   `create_date` datetime NOT NULL DEFAULT utc_timestamp(),
   `update_date` datetime NOT NULL DEFAULT utc_timestamp(),
-  `internal_identifier` varchar(255) DEFAULT NULL,
-  `fallback_agency_id` bigint(21) DEFAULT NULL,
-  `fallback_url` varchar(200) DEFAULT NULL,
-  `welcome_message` varchar(200) DEFAULT NULL,
-  `send_next_step_message` tinyint(1) NOT NULL DEFAULT 0,
-  `titles_short` varchar(4092) DEFAULT NULL,
-  `titles_long` varchar(4092) DEFAULT NULL,
-  `titles_welcome` varchar(255) DEFAULT NULL,
-  `titles_dropdown` varchar(255) DEFAULT NULL,
-  `slug` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `unique_name` (`name`,`tenant_id`) USING HASH
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
-CREATE TABLE `topic_group` (
-  `id` bigint(21) NOT NULL,
-  `name` varchar(4092) DEFAULT NULL,
-  `create_date` datetime NOT NULL DEFAULT utc_timestamp(),
-  `update_date` datetime NOT NULL DEFAULT utc_timestamp(),
+  `privacy_activation_date` datetime DEFAULT NULL,
+  `termsandconditions_activation_date` datetime DEFAULT NULL,
+  `theming_association_logo` longtext DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
-CREATE TABLE `topic_group_x_topic` (
-  `group_id` bigint(21) NOT NULL,
-  `topic_id` bigint(21) NOT NULL,
-  `create_date` datetime NOT NULL DEFAULT utc_timestamp(),
-  `update_date` datetime NOT NULL DEFAULT utc_timestamp(),
-  KEY `group_id` (`group_id`),
-  KEY `topic_id` (`topic_id`),
-  CONSTRAINT `fk_group` FOREIGN KEY (`group_id`) REFERENCES `topic_group` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_topic` FOREIGN KEY (`topic_id`) REFERENCES `topic` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping routines for database 'tenantservice'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -102,3 +108,4 @@ CREATE TABLE `topic_group_x_topic` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed on 2025-10-31 16:20:51

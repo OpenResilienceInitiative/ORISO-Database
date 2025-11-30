@@ -15,11 +15,7 @@ Stores consulting type configurations, topics, and topic groups as JSON document
 
 ### Collections
 
-**Current Collections (as of latest export):**
-- `application_settings` - Application-wide settings
-- `consulting_types` - Consulting type configuration documents
-
-#### 1. consulting_types
+#### 1. consultingTypes
 **Purpose:** Consulting type configuration documents
 
 **Structure:**
@@ -58,7 +54,38 @@ Stores consulting type configurations, topics, and topic groups as JSON document
 
 ---
 
-**Note:** Collections are created dynamically by the application. The structure may vary based on the current running system.
+#### 2. topics
+**Purpose:** Topic/subject configurations
+
+**Structure:**
+```json
+{
+  "id": 1,
+  "name": "Topic Name",
+  "description": "Topic Description",
+  "internalIdentifier": "topic-slug"
+}
+```
+
+**Indexes:**
+- `id` (unique)
+
+---
+
+#### 3. topicGroups
+**Purpose:** Groupings of related topics
+
+**Structure:**
+```json
+{
+  "id": 1,
+  "name": "Group Name",
+  "topics": [1, 2, 3]
+}
+```
+
+**Indexes:**
+- `id` (unique)
 
 ## Data Source
 The consulting type JSON files are loaded from the file system at:
@@ -99,37 +126,31 @@ db.getCollectionNames()
 
 ### Count Documents
 ```javascript
-db.consulting_types.countDocuments()
-db.application_settings.countDocuments()
+db.consultingTypes.countDocuments()
+db.topics.countDocuments()
+db.topicGroups.countDocuments()
 ```
 
 ### Find All Consulting Types
 ```javascript
-db.consulting_types.find().pretty()
+db.consultingTypes.find().pretty()
 ```
 
 ### Find Consulting Type by ID
 ```javascript
-db.consulting_types.findOne({ _id: 1 })
+db.consultingTypes.findOne({ id: 1 })
 ```
 
 ### Export Collection
 ```bash
 POD=$(kubectl get pods -n caritas -l app=mongodb -o name | head -1 | cut -d/ -f2)
-kubectl exec -n caritas $POD -- mongodump --db=consulting_types --collection=consulting_types --out=/tmp/backup
+kubectl exec -n caritas $POD -- mongodump --db=consulting_types --collection=consultingTypes --out=/tmp/backup
 ```
 
 ### Import Collection
 ```bash
 POD=$(kubectl get pods -n caritas -l app=mongodb -o name | head -1 | cut -d/ -f2)
-kubectl exec -n caritas $POD -- mongorestore --db=consulting_types --collection=consulting_types /tmp/backup/consulting_types/consulting_types.bson
-```
-
-### Export All Collections (Recommended)
-Use the export script:
-```bash
-cd /home/caritas/Desktop/online-beratung/caritas-workspace/ORISO-Database
-./scripts/export-schemas.sh
+kubectl exec -n caritas $POD -- mongorestore --db=consulting_types --collection=consultingTypes /tmp/backup/consulting_types/consultingTypes.bson
 ```
 
 ## Backup
