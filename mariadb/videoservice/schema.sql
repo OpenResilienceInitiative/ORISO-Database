@@ -17,6 +17,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Current Database: `videoservice`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `videoservice` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+
+USE `videoservice`;
+
+--
 -- Sequence structure for `sequence_videoroom`
 --
 
@@ -84,14 +92,6 @@ CREATE TABLE `videoroom` (
   UNIQUE KEY `unique_jitsi_room_id` (`jitsi_room_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping events for database 'videoservice'
---
-
---
--- Dumping routines for database 'videoservice'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -102,4 +102,4 @@ CREATE TABLE `videoroom` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-26  2:51:47
+-- Dump completed on 2026-02-07  1:26:01

@@ -1,4 +1,2 @@
-[
-  'consulting_types',
-  'application_settings'
-]
+application_settings
+consulting_types
