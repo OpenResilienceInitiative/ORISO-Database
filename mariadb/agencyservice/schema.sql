@@ -17,6 +17,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Current Database: `agencyservice`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `agencyservice` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+
+USE `agencyservice`;
+
+--
 -- Sequence structure for `sequence_agency`
 --
 
@@ -253,14 +261,6 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
-
---
--- Dumping events for database 'agencyservice'
---
-
---
--- Dumping routines for database 'agencyservice'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -271,4 +271,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-26  2:51:46
+-- Dump completed on 2026-02-07  1:26:00
