@@ -17,6 +17,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Current Database: `userservice`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `userservice` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+
+USE `userservice`;
+
+--
 -- Sequence structure for `sequence_admin_agency`
 --
 
@@ -30,7 +38,7 @@ DO SETVAL(`sequence_admin_agency`, 100000, 0);
 
 DROP SEQUENCE IF EXISTS `sequence_chat`;
 CREATE SEQUENCE `sequence_chat` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 100 nocycle ENGINE=InnoDB;
-DO SETVAL(`sequence_chat`, 400, 0);
+DO SETVAL(`sequence_chat`, 500, 0);
 
 --
 -- Sequence structure for `sequence_chat_agency`
@@ -38,7 +46,7 @@ DO SETVAL(`sequence_chat`, 400, 0);
 
 DROP SEQUENCE IF EXISTS `sequence_chat_agency`;
 CREATE SEQUENCE `sequence_chat_agency` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 100 nocycle ENGINE=InnoDB;
-DO SETVAL(`sequence_chat_agency`, 300, 0);
+DO SETVAL(`sequence_chat_agency`, 400, 0);
 
 --
 -- Sequence structure for `sequence_consultant_agency`
@@ -46,7 +54,7 @@ DO SETVAL(`sequence_chat_agency`, 300, 0);
 
 DROP SEQUENCE IF EXISTS `sequence_consultant_agency`;
 CREATE SEQUENCE `sequence_consultant_agency` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 100 nocycle ENGINE=InnoDB;
-DO SETVAL(`sequence_consultant_agency`, 100500, 0);
+DO SETVAL(`sequence_consultant_agency`, 100600, 0);
 
 --
 -- Sequence structure for `sequence_consultant_mobile_token`
@@ -62,7 +70,7 @@ DO SETVAL(`sequence_consultant_mobile_token`, 0, 0);
 
 DROP SEQUENCE IF EXISTS `sequence_session`;
 CREATE SEQUENCE `sequence_session` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 100 nocycle ENGINE=InnoDB;
-DO SETVAL(`sequence_session`, 102000, 0);
+DO SETVAL(`sequence_session`, 102100, 0);
 
 --
 -- Sequence structure for `sequence_session_data`
@@ -307,6 +315,7 @@ CREATE TABLE `consultant` (
   `last_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `is_team_consultant` tinyint(4) unsigned NOT NULL DEFAULT 0,
+  `is_supervisor` tinyint(4) unsigned NOT NULL DEFAULT 0,
   `is_absent` tinyint(4) unsigned NOT NULL DEFAULT 0,
   `absence_message` longtext DEFAULT NULL,
   `rc_user_id` varchar(255) DEFAULT NULL,
@@ -327,6 +336,7 @@ CREATE TABLE `consultant` (
   `notifications_enabled` tinyint(4) unsigned NOT NULL DEFAULT 0,
   `notifications_settings` varchar(4000) DEFAULT '',
   `matrix_password` varchar(255) DEFAULT NULL,
+  `display_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`consultant_id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `idx_first_name_last_name_email_delete_date` (`first_name`,`last_name`,`email`,`delete_date`)
@@ -442,7 +452,7 @@ CREATE TABLE `group_chat_participant` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_chat_consultant` (`chat_id`,`consultant_id`),
   KEY `idx_consultant` (`consultant_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=279 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=257 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -573,6 +583,33 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Table structure for table `session_supervisor`
+--
+
+DROP TABLE IF EXISTS `session_supervisor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `session_supervisor` (
+  `id` bigint(21) unsigned NOT NULL AUTO_INCREMENT,
+  `session_id` bigint(21) unsigned NOT NULL,
+  `supervisor_consultant_id` varchar(36) NOT NULL,
+  `added_by_consultant_id` varchar(36) NOT NULL,
+  `added_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `removed_date` datetime DEFAULT NULL,
+  `is_active` tinyint(4) NOT NULL DEFAULT 1,
+  `matrix_room_id` varchar(255) DEFAULT NULL,
+  `notes` text DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_session_active` (`session_id`,`is_active`),
+  KEY `idx_supervisor_active` (`supervisor_consultant_id`,`is_active`),
+  KEY `idx_added_by` (`added_by_consultant_id`),
+  CONSTRAINT `session_supervisor_ibfk_1` FOREIGN KEY (`session_id`) REFERENCES `session` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `session_supervisor_ibfk_2` FOREIGN KEY (`supervisor_consultant_id`) REFERENCES `consultant` (`consultant_id`) ON UPDATE CASCADE,
+  CONSTRAINT `session_supervisor_ibfk_3` FOREIGN KEY (`added_by_consultant_id`) REFERENCES `consultant` (`consultant_id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `session_topic`
@@ -735,14 +772,6 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
-
---
--- Dumping events for database 'userservice'
---
-
---
--- Dumping routines for database 'userservice'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -753,4 +782,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-26  2:51:47
+-- Dump completed on 2026-02-07  1:26:01
