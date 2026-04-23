@@ -17,18 +17,9 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `tenantservice`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `tenantservice` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
-
-USE `tenantservice`;
-
---
 -- Sequence structure for `sequence_tenant`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_tenant`;
 CREATE SEQUENCE `sequence_tenant` start with 1 minvalue 0 maxvalue 9223372036854775806 increment by 1 nocache nocycle ENGINE=InnoDB;
 DO SETVAL(`sequence_tenant`, 1, 0);
 
@@ -36,7 +27,6 @@ DO SETVAL(`sequence_tenant`, 1, 0);
 -- Table structure for table `DATABASECHANGELOG`
 --
 
-DROP TABLE IF EXISTS `DATABASECHANGELOG`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `DATABASECHANGELOG` (
@@ -61,7 +51,6 @@ CREATE TABLE `DATABASECHANGELOG` (
 -- Table structure for table `DATABASECHANGELOGLOCK`
 --
 
-DROP TABLE IF EXISTS `DATABASECHANGELOGLOCK`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `DATABASECHANGELOGLOCK` (
@@ -77,7 +66,6 @@ CREATE TABLE `DATABASECHANGELOGLOCK` (
 -- Table structure for table `tenant`
 --
 
-DROP TABLE IF EXISTS `tenant`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tenant` (
@@ -112,4 +100,4 @@ CREATE TABLE `tenant` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-02-07  1:26:00
+-- Dump completed on 2026-03-02  7:51:48

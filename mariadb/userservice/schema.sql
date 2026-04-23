@@ -17,18 +17,9 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `userservice`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `userservice` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
-
-USE `userservice`;
-
---
 -- Sequence structure for `sequence_admin_agency`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_admin_agency`;
 CREATE SEQUENCE `sequence_admin_agency` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 100 nocycle ENGINE=InnoDB;
 DO SETVAL(`sequence_admin_agency`, 100000, 0);
 
@@ -36,31 +27,27 @@ DO SETVAL(`sequence_admin_agency`, 100000, 0);
 -- Sequence structure for `sequence_chat`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_chat`;
 CREATE SEQUENCE `sequence_chat` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 100 nocycle ENGINE=InnoDB;
-DO SETVAL(`sequence_chat`, 500, 0);
+DO SETVAL(`sequence_chat`, 800, 0);
 
 --
 -- Sequence structure for `sequence_chat_agency`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_chat_agency`;
 CREATE SEQUENCE `sequence_chat_agency` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 100 nocycle ENGINE=InnoDB;
-DO SETVAL(`sequence_chat_agency`, 400, 0);
+DO SETVAL(`sequence_chat_agency`, 700, 0);
 
 --
 -- Sequence structure for `sequence_consultant_agency`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_consultant_agency`;
 CREATE SEQUENCE `sequence_consultant_agency` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 100 nocycle ENGINE=InnoDB;
-DO SETVAL(`sequence_consultant_agency`, 100600, 0);
+DO SETVAL(`sequence_consultant_agency`, 100900, 0);
 
 --
 -- Sequence structure for `sequence_consultant_mobile_token`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_consultant_mobile_token`;
 CREATE SEQUENCE `sequence_consultant_mobile_token` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 100 nocycle ENGINE=InnoDB;
 DO SETVAL(`sequence_consultant_mobile_token`, 0, 0);
 
@@ -68,15 +55,13 @@ DO SETVAL(`sequence_consultant_mobile_token`, 0, 0);
 -- Sequence structure for `sequence_session`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_session`;
 CREATE SEQUENCE `sequence_session` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 100 nocycle ENGINE=InnoDB;
-DO SETVAL(`sequence_session`, 102100, 0);
+DO SETVAL(`sequence_session`, 102400, 0);
 
 --
 -- Sequence structure for `sequence_session_data`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_session_data`;
 CREATE SEQUENCE `sequence_session_data` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 100 nocycle ENGINE=InnoDB;
 DO SETVAL(`sequence_session_data`, 100, 0);
 
@@ -84,7 +69,6 @@ DO SETVAL(`sequence_session_data`, 100, 0);
 -- Sequence structure for `sequence_session_topic`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_session_topic`;
 CREATE SEQUENCE `sequence_session_topic` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 10 nocycle ENGINE=InnoDB;
 DO SETVAL(`sequence_session_topic`, 100000, 0);
 
@@ -92,7 +76,6 @@ DO SETVAL(`sequence_session_topic`, 100000, 0);
 -- Sequence structure for `sequence_user_agency`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_user_agency`;
 CREATE SEQUENCE `sequence_user_agency` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 100 nocycle ENGINE=InnoDB;
 DO SETVAL(`sequence_user_agency`, 100, 0);
 
@@ -100,7 +83,6 @@ DO SETVAL(`sequence_user_agency`, 100, 0);
 -- Sequence structure for `sequence_user_chat`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_user_chat`;
 CREATE SEQUENCE `sequence_user_chat` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 10 nocycle ENGINE=InnoDB;
 DO SETVAL(`sequence_user_chat`, 0, 0);
 
@@ -108,7 +90,6 @@ DO SETVAL(`sequence_user_chat`, 0, 0);
 -- Sequence structure for `sequence_user_mobile_token`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_user_mobile_token`;
 CREATE SEQUENCE `sequence_user_mobile_token` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 100 nocycle ENGINE=InnoDB;
 DO SETVAL(`sequence_user_mobile_token`, 0, 0);
 
@@ -116,7 +97,6 @@ DO SETVAL(`sequence_user_mobile_token`, 0, 0);
 -- Table structure for table `DATABASECHANGELOG`
 --
 
-DROP TABLE IF EXISTS `DATABASECHANGELOG`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `DATABASECHANGELOG` (
@@ -141,7 +121,6 @@ CREATE TABLE `DATABASECHANGELOG` (
 -- Table structure for table `DATABASECHANGELOGLOCK`
 --
 
-DROP TABLE IF EXISTS `DATABASECHANGELOGLOCK`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `DATABASECHANGELOGLOCK` (
@@ -157,7 +136,6 @@ CREATE TABLE `DATABASECHANGELOGLOCK` (
 -- Table structure for table `admin`
 --
 
-DROP TABLE IF EXISTS `admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `admin` (
@@ -182,7 +160,6 @@ CREATE TABLE `admin` (
 -- Table structure for table `admin_agency`
 --
 
-DROP TABLE IF EXISTS `admin_agency`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `admin_agency` (
@@ -198,10 +175,43 @@ CREATE TABLE `admin_agency` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `agency_invite_link`
+--
+-- Tracks direct-invite links created by tenant/agency admins that, when
+-- opened by anyone, auto-register that visitor as an anonymous user for
+-- the specified agency. Each token is single-use: the `used_at` /
+-- `used_by_session_id` fields are set once the link is redeemed and the
+-- `status` flips from ACTIVE to USED. `created_by_user_id` keeps the
+-- admin scope so list queries can filter by caller.
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `agency_invite_link` (
+  `id` bigint(21) unsigned NOT NULL AUTO_INCREMENT,
+  `token` varchar(64) NOT NULL,
+  `tenant_id` bigint(21) unsigned NOT NULL,
+  `agency_id` bigint(21) unsigned NOT NULL,
+  `consulting_type_id` int(11) DEFAULT NULL,
+  `created_by_user_id` varchar(36) NOT NULL,
+  `created_by_username` varchar(255) DEFAULT NULL,
+  `create_date` datetime NOT NULL DEFAULT utc_timestamp(),
+  `expires_at` datetime DEFAULT NULL,
+  `used_at` datetime DEFAULT NULL,
+  `used_by_session_id` bigint(21) DEFAULT NULL,
+  `status` varchar(20) NOT NULL DEFAULT 'ACTIVE',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uq_token` (`token`),
+  KEY `idx_agency` (`agency_id`),
+  KEY `idx_tenant` (`tenant_id`),
+  KEY `idx_created_by` (`created_by_user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `appointment`
 --
 
-DROP TABLE IF EXISTS `appointment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `appointment` (
@@ -221,7 +231,6 @@ CREATE TABLE `appointment` (
 -- Table structure for table `chat`
 --
 
-DROP TABLE IF EXISTS `chat`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `chat` (
@@ -268,7 +277,6 @@ DELIMITER ;
 -- Table structure for table `chat_agency`
 --
 
-DROP TABLE IF EXISTS `chat_agency`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `chat_agency` (
@@ -304,7 +312,6 @@ DELIMITER ;
 -- Table structure for table `consultant`
 --
 
-DROP TABLE IF EXISTS `consultant`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `consultant` (
@@ -337,6 +344,13 @@ CREATE TABLE `consultant` (
   `notifications_settings` varchar(4000) DEFAULT '',
   `matrix_password` varchar(255) DEFAULT NULL,
   `display_name` varchar(255) DEFAULT NULL,
+  `magic_link_login_enabled` tinyint(1) NOT NULL DEFAULT 0,
+  `deletion_lifecycle_state` varchar(32) DEFAULT NULL,
+  `deletion_read_only_until` datetime DEFAULT NULL,
+  `deletion_paused_until` datetime DEFAULT NULL,
+  `deletion_pause_reason` varchar(512) DEFAULT NULL,
+  `deletion_paused_by` varchar(64) DEFAULT NULL,
+  `deletion_pause_created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`consultant_id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `idx_first_name_last_name_email_delete_date` (`first_name`,`last_name`,`email`,`delete_date`)
@@ -364,7 +378,6 @@ DELIMITER ;
 -- Table structure for table `consultant_agency`
 --
 
-DROP TABLE IF EXISTS `consultant_agency`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `consultant_agency` (
@@ -403,7 +416,6 @@ DELIMITER ;
 -- Table structure for table `consultant_mobile_token`
 --
 
-DROP TABLE IF EXISTS `consultant_mobile_token`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `consultant_mobile_token` (
@@ -438,10 +450,86 @@ DELIMITER ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
+-- Table structure for table `counselor_rename_audit_log`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `counselor_rename_audit_log` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `consultant_id` varchar(64) NOT NULL,
+  `session_id` bigint(20) NOT NULL,
+  `recipient_user_id` varchar(64) NOT NULL,
+  `old_display_name` varchar(255) NOT NULL,
+  `new_display_name` varchar(255) NOT NULL,
+  `matrix_room_id` varchar(255) DEFAULT NULL,
+  `event_type` varchar(64) NOT NULL,
+  `changed_at` datetime NOT NULL,
+  `create_date` datetime NOT NULL,
+  `tenant_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_counselor_rename_audit_consultant` (`consultant_id`),
+  KEY `idx_counselor_rename_audit_session` (`session_id`),
+  KEY `idx_counselor_rename_audit_recipient` (`recipient_user_id`),
+  KEY `idx_counselor_rename_audit_created` (`create_date`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `draft_message`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `draft_message` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(64) NOT NULL,
+  `scope_key` varchar(255) NOT NULL,
+  `text` text DEFAULT NULL,
+  `action_path` varchar(512) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `source_session_id` bigint(20) DEFAULT NULL,
+  `room_ref` varchar(255) DEFAULT NULL,
+  `thread_root_id` varchar(255) DEFAULT NULL,
+  `create_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `update_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `tenant_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_draft_message_user_scope` (`user_id`,`scope_key`),
+  KEY `idx_draft_message_user_update` (`user_id`,`update_date`),
+  KEY `idx_draft_message_tenant` (`tenant_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=218 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `event_notification`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `event_notification` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `recipient_user_id` varchar(64) NOT NULL,
+  `event_type` varchar(100) NOT NULL,
+  `category` varchar(20) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `text` text DEFAULT NULL,
+  `action_path` varchar(512) DEFAULT NULL,
+  `source_session_id` bigint(20) DEFAULT NULL,
+  `read_date` datetime DEFAULT NULL,
+  `create_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `tenant_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_event_notification_recipient_create` (`recipient_user_id`,`create_date`),
+  KEY `idx_event_notification_recipient_read` (`recipient_user_id`,`read_date`),
+  KEY `idx_event_notification_tenant` (`tenant_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=140 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `group_chat_participant`
 --
 
-DROP TABLE IF EXISTS `group_chat_participant`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `group_chat_participant` (
@@ -452,14 +540,61 @@ CREATE TABLE `group_chat_participant` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_chat_consultant` (`chat_id`,`consultant_id`),
   KEY `idx_consultant` (`consultant_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=257 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=274 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `identity_tombstone`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `identity_tombstone` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `subject_id` varchar(64) NOT NULL,
+  `subject_type` varchar(16) NOT NULL,
+  `display_label` varchar(255) NOT NULL,
+  `hard_deleted_at` datetime NOT NULL,
+  `source_delete_date` datetime DEFAULT NULL,
+  `tenant_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_identity_tombstone_subject_id` (`subject_id`),
+  KEY `idx_identity_tombstone_subject_type` (`subject_type`),
+  KEY `idx_identity_tombstone_deleted_at` (`hard_deleted_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `inactive_account_notification_audit_log`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `inactive_account_notification_audit_log` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `notification_fingerprint` varchar(255) NOT NULL,
+  `account_role` varchar(32) NOT NULL,
+  `account_id` varchar(64) NOT NULL,
+  `account_tenant_id` bigint(20) DEFAULT NULL,
+  `last_activity_at` datetime DEFAULT NULL,
+  `threshold_days` int(11) NOT NULL,
+  `recipient_admin_id` varchar(64) NOT NULL,
+  `recipient_email` varchar(255) NOT NULL,
+  `email_dispatched` tinyint(1) NOT NULL DEFAULT 0,
+  `create_date` datetime NOT NULL,
+  `tenant_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uq_inactive_account_notification_fingerprint` (`notification_fingerprint`),
+  KEY `idx_inactive_account_notification_account` (`account_role`,`account_id`),
+  KEY `idx_inactive_account_notification_recipient` (`recipient_admin_id`),
+  KEY `idx_inactive_account_notification_created` (`create_date`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `language`
 --
 
-DROP TABLE IF EXISTS `language`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `language` (
@@ -474,7 +609,6 @@ CREATE TABLE `language` (
 -- Table structure for table `session`
 --
 
-DROP TABLE IF EXISTS `session`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `session` (
@@ -549,7 +683,6 @@ DELIMITER ;
 -- Table structure for table `session_data`
 --
 
-DROP TABLE IF EXISTS `session_data`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `session_data` (
@@ -588,7 +721,6 @@ DELIMITER ;
 -- Table structure for table `session_supervisor`
 --
 
-DROP TABLE IF EXISTS `session_supervisor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `session_supervisor` (
@@ -608,14 +740,13 @@ CREATE TABLE `session_supervisor` (
   CONSTRAINT `session_supervisor_ibfk_1` FOREIGN KEY (`session_id`) REFERENCES `session` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `session_supervisor_ibfk_2` FOREIGN KEY (`supervisor_consultant_id`) REFERENCES `consultant` (`consultant_id`) ON UPDATE CASCADE,
   CONSTRAINT `session_supervisor_ibfk_3` FOREIGN KEY (`added_by_consultant_id`) REFERENCES `consultant` (`consultant_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `session_topic`
 --
 
-DROP TABLE IF EXISTS `session_topic`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `session_topic` (
@@ -634,7 +765,6 @@ CREATE TABLE `session_topic` (
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
@@ -657,6 +787,13 @@ CREATE TABLE `user` (
   `notifications_enabled` tinyint(4) unsigned NOT NULL DEFAULT 0,
   `notifications_settings` varchar(4000) DEFAULT '',
   `matrix_password` varchar(255) DEFAULT NULL,
+  `magic_link_login_enabled` tinyint(1) NOT NULL DEFAULT 0,
+  `deletion_lifecycle_state` varchar(32) DEFAULT NULL,
+  `deletion_read_only_until` datetime DEFAULT NULL,
+  `deletion_paused_until` datetime DEFAULT NULL,
+  `deletion_pause_reason` varchar(512) DEFAULT NULL,
+  `deletion_paused_by` varchar(64) DEFAULT NULL,
+  `deletion_pause_created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -682,7 +819,6 @@ DELIMITER ;
 -- Table structure for table `user_agency`
 --
 
-DROP TABLE IF EXISTS `user_agency`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_agency` (
@@ -718,7 +854,6 @@ DELIMITER ;
 -- Table structure for table `user_chat`
 --
 
-DROP TABLE IF EXISTS `user_chat`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_chat` (
@@ -739,7 +874,6 @@ CREATE TABLE `user_chat` (
 -- Table structure for table `user_mobile_token`
 --
 
-DROP TABLE IF EXISTS `user_mobile_token`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_mobile_token` (
@@ -782,4 +916,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-02-07  1:26:01
+-- Dump completed on 2026-03-26 20:26:48

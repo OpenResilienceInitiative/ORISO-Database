@@ -17,42 +17,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `agencyservice`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `agencyservice` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
-
-USE `agencyservice`;
-
---
 -- Sequence structure for `sequence_agency`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_agency`;
 CREATE SEQUENCE `sequence_agency` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 10 nocycle ENGINE=InnoDB;
-DO SETVAL(`sequence_agency`, 200, 0);
+DO SETVAL(`sequence_agency`, 220, 0);
 
 --
 -- Sequence structure for `sequence_agency_postcode_range`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_agency_postcode_range`;
 CREATE SEQUENCE `sequence_agency_postcode_range` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 10 nocycle ENGINE=InnoDB;
-DO SETVAL(`sequence_agency_postcode_range`, 180, 0);
+DO SETVAL(`sequence_agency_postcode_range`, 200, 0);
 
 --
 -- Sequence structure for `sequence_agency_topic`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_agency_topic`;
 CREATE SEQUENCE `sequence_agency_topic` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 10 nocycle ENGINE=InnoDB;
-DO SETVAL(`sequence_agency_topic`, 280, 0);
+DO SETVAL(`sequence_agency_topic`, 300, 0);
 
 --
 -- Sequence structure for `sequence_diocese`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_diocese`;
 CREATE SEQUENCE `sequence_diocese` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 nocache nocycle ENGINE=InnoDB;
 DO SETVAL(`sequence_diocese`, 0, 0);
 
@@ -60,7 +48,6 @@ DO SETVAL(`sequence_diocese`, 0, 0);
 -- Table structure for table `DATABASECHANGELOG`
 --
 
-DROP TABLE IF EXISTS `DATABASECHANGELOG`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `DATABASECHANGELOG` (
@@ -85,7 +72,6 @@ CREATE TABLE `DATABASECHANGELOG` (
 -- Table structure for table `DATABASECHANGELOGLOCK`
 --
 
-DROP TABLE IF EXISTS `DATABASECHANGELOGLOCK`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `DATABASECHANGELOGLOCK` (
@@ -101,7 +87,6 @@ CREATE TABLE `DATABASECHANGELOGLOCK` (
 -- Table structure for table `agency`
 --
 
-DROP TABLE IF EXISTS `agency`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `agency` (
@@ -158,7 +143,6 @@ DELIMITER ;
 -- Table structure for table `agency_postcode_range`
 --
 
-DROP TABLE IF EXISTS `agency_postcode_range`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `agency_postcode_range` (
@@ -196,7 +180,6 @@ DELIMITER ;
 -- Table structure for table `agency_topic`
 --
 
-DROP TABLE IF EXISTS `agency_topic`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `agency_topic` (
@@ -232,7 +215,6 @@ DELIMITER ;
 -- Table structure for table `diocese`
 --
 
-DROP TABLE IF EXISTS `diocese`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `diocese` (
@@ -271,4 +253,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-02-07  1:26:00
+-- Dump completed on 2026-03-02  7:51:47
