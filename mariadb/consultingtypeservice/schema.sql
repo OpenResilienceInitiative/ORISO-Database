@@ -17,18 +17,9 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `consultingtypeservice`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `consultingtypeservice` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
-
-USE `consultingtypeservice`;
-
---
 -- Sequence structure for `sequence_topic`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_topic`;
 CREATE SEQUENCE `sequence_topic` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 nocache nocycle ENGINE=InnoDB;
 DO SETVAL(`sequence_topic`, 0, 0);
 
@@ -36,7 +27,6 @@ DO SETVAL(`sequence_topic`, 0, 0);
 -- Sequence structure for `sequence_topic_group`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_topic_group`;
 CREATE SEQUENCE `sequence_topic_group` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 nocache nocycle ENGINE=InnoDB;
 DO SETVAL(`sequence_topic_group`, 0, 0);
 
@@ -44,7 +34,6 @@ DO SETVAL(`sequence_topic_group`, 0, 0);
 -- Sequence structure for `sequence_topic_group_x_topic`
 --
 
-DROP SEQUENCE IF EXISTS `sequence_topic_group_x_topic`;
 CREATE SEQUENCE `sequence_topic_group_x_topic` start with 0 minvalue 0 maxvalue 9223372036854775806 increment by 1 cache 10 nocycle ENGINE=InnoDB;
 DO SETVAL(`sequence_topic_group_x_topic`, 0, 0);
 
@@ -52,7 +41,6 @@ DO SETVAL(`sequence_topic_group_x_topic`, 0, 0);
 -- Table structure for table `DATABASECHANGELOG`
 --
 
-DROP TABLE IF EXISTS `DATABASECHANGELOG`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `DATABASECHANGELOG` (
@@ -77,7 +65,6 @@ CREATE TABLE `DATABASECHANGELOG` (
 -- Table structure for table `DATABASECHANGELOGLOCK`
 --
 
-DROP TABLE IF EXISTS `DATABASECHANGELOGLOCK`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `DATABASECHANGELOGLOCK` (
@@ -93,7 +80,6 @@ CREATE TABLE `DATABASECHANGELOGLOCK` (
 -- Table structure for table `topic`
 --
 
-DROP TABLE IF EXISTS `topic`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `topic` (
@@ -123,7 +109,6 @@ CREATE TABLE `topic` (
 -- Table structure for table `topic_group`
 --
 
-DROP TABLE IF EXISTS `topic_group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `topic_group` (
@@ -139,7 +124,6 @@ CREATE TABLE `topic_group` (
 -- Table structure for table `topic_group_x_topic`
 --
 
-DROP TABLE IF EXISTS `topic_group_x_topic`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `topic_group_x_topic` (
@@ -163,4 +147,4 @@ CREATE TABLE `topic_group_x_topic` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-02-07  1:26:00
+-- Dump completed on 2026-03-02  7:51:47
