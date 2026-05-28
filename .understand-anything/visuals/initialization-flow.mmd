@@ -1,0 +1,12 @@
+sequenceDiagram
+  participant DevOps
+  participant Job as database-initialize Job
+  participant Maria as MariaDB Pod
+  participant Mongo as MongoDB Pod
+  DevOps->>Job: Copy backup archives to /tmp
+  Job->>Job: Read backupTimestamp ConfigMap
+  Job->>Maria: Wait for ready pod
+  Job->>Maria: Stream gunzip SQL into mysql
+  Job->>Mongo: Wait for ready pod
+  Job->>Mongo: Copy archive and run mongorestore
+  Job-->>DevOps: Database initialization completed

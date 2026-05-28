@@ -1,0 +1,13 @@
+flowchart LR
+  Tenant[tenantservice.tenant] --> Agency[agencyservice.agency tenant_id]
+  Tenant --> User[userservice.user tenant_id]
+  Tenant --> Consultant[userservice.consultant tenant_id]
+  Tenant --> Session[userservice.session tenant_id]
+  User --> Session
+  Consultant --> Session
+  Agency --> ConsultantAgency[userservice.consultant_agency agency_id]
+  Agency --> UserAgency[userservice.user_agency agency_id]
+  Session --> SessionData[session_data]
+  Session --> SessionTopic[session_topic]
+  Session --> Video[videoservice.videoroom]
+  Session --> Upload[uploadservice.uploadbyuser]

@@ -1,0 +1,10 @@
+flowchart TD
+  RunningDB[(Running MariaDB and MongoDB)] --> BackupDir[backups/timestamp]
+  BackupDir --> MariaDump[mariadb-all-databases.sql.gz]
+  BackupDir --> MongoDump[mongodb-all-databases.archive.gz]
+  MariaDump --> InitJob[scripts/database-initialize.yaml]
+  MongoDump --> InitJob
+  InitJob --> RestoreMaria[mysql restore]
+  InitJob --> RestoreMongo[mongorestore]
+  RestoreMaria --> NewMaria[(Initialized MariaDB)]
+  RestoreMongo --> NewMongo[(Initialized MongoDB)]
