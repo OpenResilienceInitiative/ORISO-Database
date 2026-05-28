@@ -1,0 +1,16 @@
+erDiagram
+  TENANT ||--o{ USER : tenant_id
+  TENANT ||--o{ CONSULTANT : tenant_id
+  TENANT ||--o{ AGENCY : tenant_id
+  TENANT ||--o{ SESSION : tenant_id
+  USER ||--o{ SESSION : user_id
+  CONSULTANT ||--o{ SESSION : consultant_id
+  SESSION ||--o{ SESSION_DATA : session_id
+  SESSION ||--o{ SESSION_TOPIC : session_id
+  SESSION ||--o{ SESSION_SUPERVISOR : session_id
+  CONSULTANT ||--o{ CONSULTANT_AGENCY : consultant_id
+  AGENCY ||--o{ CONSULTANT_AGENCY : agency_id_convention
+  USER ||--o{ USER_CHAT : user_id
+  CHAT ||--o{ USER_CHAT : chat_id
+  SESSION ||--o{ VIDEO_ROOM : session_id_convention
+  SESSION ||--o{ UPLOAD_BY_USER : session_id_convention

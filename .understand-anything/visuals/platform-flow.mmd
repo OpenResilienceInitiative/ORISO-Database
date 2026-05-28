@@ -1,0 +1,12 @@
+flowchart TD
+  Repo[ORISO-Database] --> MariaDB[MariaDB service schemas]
+  Repo --> MongoDB[MongoDB consulting documents]
+  Repo --> Postgres[Matrix PostgreSQL docs]
+  Repo --> Redis[Redis cache and sessions]
+  Repo --> Rabbit[RabbitMQ messages]
+  Repo --> Backups[Timestamped backups]
+  Repo --> Jobs[Kubernetes init and seed jobs]
+  MariaDB --> TenantDB[tenantservice]
+  MariaDB --> UserDB[userservice]
+  MariaDB --> AgencyDB[agencyservice]
+  MariaDB --> ConsultingDB[consultingtypeservice]
