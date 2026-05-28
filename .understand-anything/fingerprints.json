@@ -1,0 +1,327 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "80da1e8be486ea06b3b1e6388ca9c8d5ee79a6f0",
+  "generatedAt": "2026-05-28T13:17:58.434Z",
+  "files": {
+    "backups/targeted_shazia_cleanup_20260313_171710.sql": {
+      "filePath": "backups/targeted_shazia_cleanup_20260313_171710.sql",
+      "contentHash": "e1b166a6fe907871d02803c9fc6d1622a995d2f55f47a728f9f788b7a4dc6702",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 342,
+      "hasStructuralAnalysis": true
+    },
+    "k8s/mariadb-client/configmap.yaml": {
+      "filePath": "k8s/mariadb-client/configmap.yaml",
+      "contentHash": "4826cb5bb1dbc07ce67454d9283dc9ecfad8053b7212342257a8ae1572650be2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 30,
+      "hasStructuralAnalysis": true
+    },
+    "k8s/mariadb-client/deployment.yaml": {
+      "filePath": "k8s/mariadb-client/deployment.yaml",
+      "contentHash": "75c98bf006f9befc899c1f034c22a976f8f5feaf0ce6d5de4065ba5b77ce8481",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "k8s/mariadb-client/ingress.yaml": {
+      "filePath": "k8s/mariadb-client/ingress.yaml",
+      "contentHash": "53498858c4a39b6e3a1402d7680eb56d5c1d29968f5d1476a170d87eae6949b1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 39,
+      "hasStructuralAnalysis": true
+    },
+    "k8s/mariadb-client/kustomization.yaml": {
+      "filePath": "k8s/mariadb-client/kustomization.yaml",
+      "contentHash": "8e97c276a873a5f829f19602c40ee928317d7f07d97181e908c6c5e4e39aa7f4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": true
+    },
+    "k8s/mariadb-client/README.md": {
+      "filePath": "k8s/mariadb-client/README.md",
+      "contentHash": "3770a79364560e20e66b47ab1d6a64d5325f58387cbab94c775dd97c104ab5b9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 41,
+      "hasStructuralAnalysis": true
+    },
+    "k8s/mariadb-client/service.yaml": {
+      "filePath": "k8s/mariadb-client/service.yaml",
+      "contentHash": "f162fc92862bb30c7f9e686da75d34d5ecb44f35bb9618361dd221271bb914ac",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 17,
+      "hasStructuralAnalysis": true
+    },
+    "mariadb/agencyservice/schema.sql": {
+      "filePath": "mariadb/agencyservice/schema.sql",
+      "contentHash": "e3671479a27d5c1c8bc9c593fc1c9705f8bedc17033f32c8c2d8e81015369ec0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 257,
+      "hasStructuralAnalysis": true
+    },
+    "mariadb/caritas/schema.sql": {
+      "filePath": "mariadb/caritas/schema.sql",
+      "contentHash": "89b8886bc55af04e93ace5a97e17a190f2100153fd8e597bba7cafc94c9f412b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "mariadb/consultingtypeservice/schema.sql": {
+      "filePath": "mariadb/consultingtypeservice/schema.sql",
+      "contentHash": "ef908903510372e3fce6e0a13bc7f4f64b010dccf90f004a7333989a4ef89b67",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 151,
+      "hasStructuralAnalysis": true
+    },
+    "mariadb/README.md": {
+      "filePath": "mariadb/README.md",
+      "contentHash": "ca09bdbac72597239d82a57a99619f7b399210c1fae54bce9e9f5dc5a1153519",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 169,
+      "hasStructuralAnalysis": true
+    },
+    "mariadb/tenantservice/schema.sql": {
+      "filePath": "mariadb/tenantservice/schema.sql",
+      "contentHash": "d582a45418acb699ca77ff08419d5a04e6b21da4666121b284355d436343140b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 104,
+      "hasStructuralAnalysis": true
+    },
+    "mariadb/uploadservice/schema.sql": {
+      "filePath": "mariadb/uploadservice/schema.sql",
+      "contentHash": "3b3ca3bc7da7b4e20c13b622794f4fa1764042f5f8a1d92281afe3200c78c2a2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 90,
+      "hasStructuralAnalysis": true
+    },
+    "mariadb/userservice/schema.sql": {
+      "filePath": "mariadb/userservice/schema.sql",
+      "contentHash": "502498989c484b99fcfbaa9aab8288aa284fb8fc9675af1a67acc55669b09325",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 920,
+      "hasStructuralAnalysis": true
+    },
+    "mariadb/videoservice/schema.sql": {
+      "filePath": "mariadb/videoservice/schema.sql",
+      "contentHash": "7562bf57a59e9ee68877b1838dbe7800723288314de6c579f7b5c3b9487310b9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 94,
+      "hasStructuralAnalysis": true
+    },
+    "mongodb/consulting_types/collections.txt": {
+      "filePath": "mongodb/consulting_types/collections.txt",
+      "contentHash": "695482df16ae112db80e48afaa88c941ff0f1fea8845b0439ec379b95b7eeaac",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 3,
+      "hasStructuralAnalysis": false
+    },
+    "mongodb/consulting_types/dump/application_settings.metadata.json": {
+      "filePath": "mongodb/consulting_types/dump/application_settings.metadata.json",
+      "contentHash": "56f8839337b463d65c736c0094932ebabe9eae7aece54f71ddb0faa846b70a77",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": true
+    },
+    "mongodb/consulting_types/dump/consulting_types.metadata.json": {
+      "filePath": "mongodb/consulting_types/dump/consulting_types.metadata.json",
+      "contentHash": "b5453197e94a4891ba50b4986bab2d59484095fcd3707021d0c305f73f07d54c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": true
+    },
+    "mongodb/consulting_types/dump/prelude.json": {
+      "filePath": "mongodb/consulting_types/dump/prelude.json",
+      "contentHash": "a340db68abd1a3b00417aca5198ef149d6e38e2737bbb57c0a808b27e6469b4c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": true
+    },
+    "mongodb/consultingtypeservice/collections.txt": {
+      "filePath": "mongodb/consultingtypeservice/collections.txt",
+      "contentHash": "695482df16ae112db80e48afaa88c941ff0f1fea8845b0439ec379b95b7eeaac",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 3,
+      "hasStructuralAnalysis": false
+    },
+    "mongodb/consultingtypeservice/dump/application_settings.metadata.json": {
+      "filePath": "mongodb/consultingtypeservice/dump/application_settings.metadata.json",
+      "contentHash": "af5462d55ba14d928a07a1ecab51a852480d36e9f8180ce2f22f8c5bf4ac0d24",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": true
+    },
+    "mongodb/consultingtypeservice/dump/consulting_types.metadata.json": {
+      "filePath": "mongodb/consultingtypeservice/dump/consulting_types.metadata.json",
+      "contentHash": "2f079710dc40095afdbc85cf2a545e4c57d66af1eae6508dc81aa6d01975e535",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": true
+    },
+    "mongodb/consultingtypeservice/dump/prelude.json": {
+      "filePath": "mongodb/consultingtypeservice/dump/prelude.json",
+      "contentHash": "a340db68abd1a3b00417aca5198ef149d6e38e2737bbb57c0a808b27e6469b4c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": true
+    },
+    "mongodb/README.md": {
+      "filePath": "mongodb/README.md",
+      "contentHash": "c89ef036f55d4edef8b912ddc60b86673d740461b1a40b7fdae88ce83409cb29",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 177,
+      "hasStructuralAnalysis": true
+    },
+    "postgresql/matrix/STATUS.md": {
+      "filePath": "postgresql/matrix/STATUS.md",
+      "contentHash": "ba6296a8ceb0b6dcfc366aa935277247e4192e0b2d45d0d6589538226a96f981",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 41,
+      "hasStructuralAnalysis": true
+    },
+    "postgresql/README.md": {
+      "filePath": "postgresql/README.md",
+      "contentHash": "78e5cd04a5843f36ed0c03ae1f6ce259dc8d32e661c20ae20618a1e4947d363e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 144,
+      "hasStructuralAnalysis": true
+    },
+    "rabbitmq/README.md": {
+      "filePath": "rabbitmq/README.md",
+      "contentHash": "3dbd87b2d9363e7480733fe5256ef84c7ff3e30b2df3a3ff4a114cd05df9263a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 169,
+      "hasStructuralAnalysis": true
+    },
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "f37bcb8e3bb50aead0d3497bcda4b3255995289db07b68f9f198816b4f27e44d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 335,
+      "hasStructuralAnalysis": true
+    },
+    "redis/README.md": {
+      "filePath": "redis/README.md",
+      "contentHash": "d32dcfd30a016ee6dd9e664fee46f14023ff24d6920d087596546cb7a0027bdc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 128,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/database-initialize.yaml": {
+      "filePath": "scripts/database-initialize.yaml",
+      "contentHash": "9bc55749b11dd3e4e3360105ded6ddafd93d1a8eed74086b258604d3a6fd55cb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 187,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/README.md": {
+      "filePath": "scripts/README.md",
+      "contentHash": "ed76b980970ef494a86a65aff8d9b104b507a791282021d2012706e3481943d1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 148,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/system-users-job.yaml": {
+      "filePath": "scripts/system-users-job.yaml",
+      "contentHash": "c68e52d8dff480d288ec4e06b176126dea96983679e8edddbbd739aedd7d208b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 254,
+      "hasStructuralAnalysis": true
+    }
+  }
+}

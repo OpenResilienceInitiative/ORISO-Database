@@ -1,0 +1,23 @@
+{
+  "projectRoot": "/Users/nikunjchampakbhairohit/Developer/freelance/Germany/Oriso-frank-client/ORISO/ORISO-Database",
+  "gitCommitHash": "80da1e8be486ea06b3b1e6388ca9c8d5ee79a6f0",
+  "generatedAt": "2026-05-28T13:17:38.816Z",
+  "skill": "understand-anything",
+  "scope": "current repository only",
+  "stats": {
+    "filesScanned": 36,
+    "nodes": 192,
+    "edges": 312,
+    "layers": 8,
+    "mariadbDatabases": 7,
+    "mariadbTables": 46,
+    "userserviceTables": 26,
+    "sequences": 21,
+    "triggers": 13,
+    "backupDirectories": 7
+  },
+  "notes": [
+    "Compressed backup archives were ignored during content scanning but documented from repository metadata.",
+    "No parent folders or sibling repositories were analyzed."
+  ]
+}
