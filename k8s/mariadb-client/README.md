@@ -1,6 +1,6 @@
 # ORISO MariaDB Web Client (Dev)
 
-Self-hosted MariaDB web client for the ORISO dev cluster, exposed as `https://db.oriso-dev.site`.
+Self-hosted MariaDB web client for the ORISO dev cluster, exposed as `https://db.oriso.org`.
 
 Security goals:
 - Do **not** expose MariaDB TCP port publicly.
@@ -13,7 +13,7 @@ Security goals:
 - Namespace: `caritas`
 - Deployment: `oriso-mariadb-client` (phpMyAdmin)
 - Service: `oriso-mariadb-client` (ClusterIP)
-- Ingress: `oriso-mariadb-client-ingress` (host `db.oriso-dev.site`)
+- Ingress: `oriso-mariadb-client-ingress` (host `db.oriso.org`)
 - ConfigMap: `oriso-mariadb-client-config` (phpMyAdmin config)
 
 ## Secrets required (create in cluster, do NOT commit)

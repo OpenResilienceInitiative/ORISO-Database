@@ -24,9 +24,9 @@ LOCK TABLES `user` WRITE;
 INSERT INTO `user` VALUES
 ('3c170abd-e072-4e87-91f3-99935c2c0da5',NULL,NULL,NULL,'enc.IFXG63TZNVXXK4ZNGE3TOMZUGIYTINBWGA3TK...','3c170abd-e072-4e87-91f3-99935c2c0da5@beratungcaritas.de',NULL,'@anonymous-1773421446075:91.99.183.160',1,'2026-03-13 17:04:11','2026-03-13 17:04:11','de','','2026-03-13 17:04:11','2026-03-13 17:04:11',NULL,0,NULL,'z9OpwXsc',0),
 ('b3c2623d-6659-4e3d-a24b-dd1a7637687e',NULL,NULL,NULL,'enc.ONUGC6TJMF2XGZLS','b3c2623d-6659-4e3d-a24b-dd1a7637687e@beratungcaritas.de',NULL,'@shaziauser:91.99.183.160',1,'2026-03-13 17:00:40','2026-03-13 17:00:40','de','','2026-03-13 17:00:40','2026-03-13 17:00:41',NULL,0,NULL,'@User12345',0),
-('caritas_admin',NULL,NULL,NULL,'caritas_admin','caritas_admin@caritas.local',NULL,'@caritas_admin:oriso-dev.site',0,NULL,NULL,'de','','2025-12-27 08:33:16','2025-12-27 08:33:16',NULL,0,'','@CaritasAdmin2025!',0),
-('group-chat-system',NULL,NULL,NULL,'group-chat-system','group-chat-system@caritas.local',NULL,'@group-chat-system:oriso-dev.site',0,NULL,NULL,'de','','2025-12-27 08:33:16','2025-12-27 08:33:16',NULL,0,'','@GroupChatSystem2025!',0),
-('oriso_call_admin',NULL,NULL,NULL,'oriso_call_admin','oriso_call_admin@caritas.local',NULL,'@oriso_call_admin:oriso-dev.site',0,NULL,NULL,'de','','2025-12-27 08:33:16','2025-12-27 08:33:16',NULL,0,'','@OrisoCallAdmin2025!',0);
+('caritas_admin',NULL,NULL,NULL,'caritas_admin','caritas_admin@caritas.local',NULL,'@caritas_admin:oriso.org',0,NULL,NULL,'de','','2025-12-27 08:33:16','2025-12-27 08:33:16',NULL,0,'','@CaritasAdmin2025!',0),
+('group-chat-system',NULL,NULL,NULL,'group-chat-system','group-chat-system@caritas.local',NULL,'@group-chat-system:oriso.org',0,NULL,NULL,'de','','2025-12-27 08:33:16','2025-12-27 08:33:16',NULL,0,'','@GroupChatSystem2025!',0),
+('oriso_call_admin',NULL,NULL,NULL,'oriso_call_admin','oriso_call_admin@caritas.local',NULL,'@oriso_call_admin:oriso.org',0,NULL,NULL,'de','','2025-12-27 08:33:16','2025-12-27 08:33:16',NULL,0,'','@OrisoCallAdmin2025!',0);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
