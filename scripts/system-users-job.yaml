@@ -198,7 +198,7 @@ metadata:
 data:
   namespace: "caritas"
   # Matrix domain - should be configured per environment
-  matrixDomain: "oriso-dev.site"  # Matrix server domain (from Helm global values)
+  matrixDomain: "oriso.org"  # Matrix server domain (from Helm global values)
   # Matrix registration secret - should match Matrix homeserver.yaml
   matrixRegistrationSecret: "caritas-registration-secret-2025"  # TODO: Move to Secret
 ---
