@@ -1,0 +1,21 @@
+name: Schema Validation
+
+on:
+  pull_request:
+  push:
+    branches:
+      - dev
+      - main
+      - "codex/**"
+
+jobs:
+  mariadb-schema:
+    name: MariaDB schema checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate MariaDB schemas
+        run: bash scripts/validate-mariadb-schemas.sh
