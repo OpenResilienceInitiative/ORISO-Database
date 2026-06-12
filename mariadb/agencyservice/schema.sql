@@ -117,6 +117,7 @@ CREATE TABLE `agency` (
   `agency_logo` longtext DEFAULT NULL,
   `matrix_user_id` varchar(255) DEFAULT NULL,
   `matrix_password` varchar(255) DEFAULT NULL,
+  `settings` longtext DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `diocese_id` (`diocese_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
