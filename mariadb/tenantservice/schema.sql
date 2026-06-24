@@ -72,6 +72,8 @@ CREATE TABLE `tenant` (
   `id` bigint(21) NOT NULL,
   `name` varchar(40) NOT NULL,
   `subdomain` varchar(255) NOT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
   `licensing_allowed_users` int(11) DEFAULT NULL,
   `theming_logo` longtext DEFAULT NULL,
   `theming_favicon` longtext DEFAULT NULL,
