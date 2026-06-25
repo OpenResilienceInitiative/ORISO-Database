@@ -744,6 +744,72 @@ CREATE TABLE `session_supervisor` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `case_handover_request`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `case_handover_request` (
+  `id` bigint(21) unsigned NOT NULL AUTO_INCREMENT,
+  `session_id` bigint(21) unsigned NOT NULL,
+  `requester_consultant_id` varchar(36) NOT NULL,
+  `previous_consultant_id` varchar(36) DEFAULT NULL,
+  `reason_code` varchar(100) NOT NULL,
+  `reason_label` varchar(255) NOT NULL,
+  `explanation` text NOT NULL,
+  `status` varchar(40) NOT NULL,
+  `client_consent_required` tinyint(1) NOT NULL DEFAULT 0,
+  `policy_authority` varchar(255) NOT NULL,
+  `audit_outcome` varchar(100) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `resolved_at` datetime DEFAULT NULL,
+  `tenant_id` bigint(21) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_case_handover_session_requester_created` (`session_id`,`requester_consultant_id`,`created_at`),
+  KEY `idx_case_handover_tenant_created` (`tenant_id`,`created_at`),
+  KEY `idx_case_handover_status` (`status`),
+  CONSTRAINT `case_handover_request_session_fk` FOREIGN KEY (`session_id`) REFERENCES `session` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `case_handover_request_requester_fk` FOREIGN KEY (`requester_consultant_id`) REFERENCES `consultant` (`consultant_id`) ON UPDATE CASCADE,
+  CONSTRAINT `case_handover_request_previous_fk` FOREIGN KEY (`previous_consultant_id`) REFERENCES `consultant` (`consultant_id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `case_handover_reason_policy`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `case_handover_reason_policy` (
+  `code` varchar(100) NOT NULL,
+  `label` varchar(255) NOT NULL,
+  `client_consent_required` tinyint(1) NOT NULL DEFAULT 0,
+  `access_allowed` tinyint(1) NOT NULL DEFAULT 1,
+  `enabled` tinyint(1) NOT NULL DEFAULT 1,
+  `display_order` int(11) NOT NULL DEFAULT 100,
+  `policy_authority` varchar(255) NOT NULL,
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`code`),
+  KEY `idx_case_handover_reason_enabled_order` (`enabled`,`display_order`,`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `case_handover_reason_policy`
+--
+
+LOCK TABLES `case_handover_reason_policy` WRITE;
+/*!40000 ALTER TABLE `case_handover_reason_policy` DISABLE KEYS */;
+INSERT INTO `case_handover_reason_policy` VALUES
+('COUNSELLOR_ASKED_FOR_ADVICE','Counsellor asked for advice',1,1,1,10,'platform-admin-default-case-handover-policy',utc_timestamp()),
+('COUNSELLOR_ON_HOLIDAY','Counsellor is on holiday',0,1,1,20,'platform-admin-default-case-handover-policy',utc_timestamp()),
+('OTHER_EMERGENCY','Other emergency',0,1,1,30,'platform-admin-default-case-handover-policy',utc_timestamp()),
+('COUNSELLOR_IS_ILL','Counsellor is ill',0,1,1,40,'platform-admin-default-case-handover-policy',utc_timestamp()),
+('COUNSELLOR_LEFT','Counsellor does not work here anymore',0,1,1,50,'platform-admin-default-case-handover-policy',utc_timestamp());
+/*!40000 ALTER TABLE `case_handover_reason_policy` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `session_topic`
 --
 
